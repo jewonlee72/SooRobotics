@@ -3,99 +3,110 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SREDU & Soorobotics | Jewon Lee</title>
+    <title>Jewon Lee | SooRobotics Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
-<body class="bg-gray-50 text-gray-800 font-sans">
+<body class="bg-slate-50 text-slate-900 font-sans">
 
-    <nav class="fixed w-full bg-white/90 backdrop-blur shadow-sm z-50">
+    <nav class="sticky top-0 bg-white/90 backdrop-blur-sm border-b border-slate-200 z-50">
         <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-            <div class="flex items-center space-x-2">
-                <span class="text-2xl font-black text-blue-700 tracking-tighter">SREDU</span>
-                <span class="text-gray-300 font-light">|</span>
-                <span class="text-lg font-bold text-gray-600 uppercase tracking-widest text-xs">Soorobotics</span>
-            </div>
-            <div class="hidden md:flex space-x-8 text-sm font-semibold">
-                <a href="#about" class="hover:text-blue-600 transition">Legacy</a>
-                <a href="#innovations" class="hover:text-blue-600 transition">Innovations</a>
-                <a href="#edu" class="hover:text-blue-600 transition">STEM Edu</a>
+            <span class="text-xl font-black tracking-tighter text-blue-900">SOOROBOTICS</span>
+            <div class="space-x-6 text-sm font-bold text-slate-600">
+                <a href="#current" class="hover:text-blue-600">Current</a>
+                <a href="#uav" class="hover:text-blue-600">UAV History</a>
+                <a href="#mobility" class="hover:text-blue-600">Mobility</a>
             </div>
         </div>
     </nav>
 
-    <header id="about" class="pt-32 pb-20 px-6">
-        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
-            <div>
-                <span class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">30+ Years Excellence</span>
-                <h1 class="text-4xl lg:text-5xl font-extrabold mt-4 mb-6 leading-tight">
-                    하늘을 넘어 지능형 <br><span class="text-blue-600">로보틱스 교육의 미래</span>로
-                </h1>
-                <p class="text-lg text-gray-600 mb-8 leading-relaxed">
-                    항공우주공학 박사로서 쌓아온 UAV 산업의 기술력을 바탕으로, <br>
-                    <strong>SREDU</strong>는 더 스마트한 로봇 교육을, <strong>Soorobotics</strong>는 혁신적인 AI 로봇 솔루션을 지향합니다.
-                </p>
-                <div class="flex space-x-4">
-                    <a href="https://benzydad.wixsite.com/sredu" target="_blank" class="border border-gray-300 px-6 py-3 rounded-lg text-sm font-bold hover:bg-gray-50 transition">기존 Wix 사이트 방문</a>
-                </div>
-            </div>
-            <div class="bg-white p-2 rounded-3xl shadow-2xl rotate-2">
-                <div class="bg-gray-100 rounded-2xl aspect-video flex items-center justify-center">
-                    <i class="fa-solid fa-plane-up text-6xl text-gray-300"></i>
-                </div>
-            </div>
-        </div>
+    <header class="max-w-6xl mx-auto px-6 py-20">
+        <h1 class="text-5xl font-extrabold mb-6">Innovative <span class="text-blue-600">Unmanned Systems</span></h1>
+        <p class="text-xl text-slate-600 max-w-2xl leading-relaxed">
+            항공우주공학 박사로서 2007년부터 이어온 AHRS/INS 센서 기술과 대형 하이브리드 멀티콥터 설계 역량을 바탕으로 로보틱스의 한계를 넓힙니다. [cite: 1, 18, 197]
+        </p>
     </header>
 
-    <section id="innovations" class="bg-white py-24">
+    <section id="current" class="bg-white py-20 border-y border-slate-100">
         <div class="max-w-6xl mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl font-bold mb-4 italic">Next-Gen Innovations</h2>
-                <p class="text-gray-500">최신 ROS 2 및 AI 기술이 집약된 프로젝트</p>
-            </div>
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <div class="group p-6 bg-gray-50 rounded-2xl border border-transparent hover:border-blue-200 hover:bg-white hover:shadow-xl transition">
-                    <h3 class="font-bold text-lg mb-2 group-hover:text-blue-600">Persona Scout</h3>
-                    <p class="text-sm text-gray-500 mb-4 font-mono uppercase tracking-tighter">AI UGV Node</p>
-                    <p class="text-gray-600 text-sm leading-relaxed">LLM 기반 대화형 인터페이스를 탑재한 지능형 로버 개발.</p>
+            <h2 class="text-3xl font-bold mb-12 italic">Recent Success</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="p-8 bg-slate-50 rounded-2xl border border-slate-100">
+                    <div class="flex items-center space-x-3 mb-4">
+                        <i class="fa-solid fa-microchip text-blue-600"></i>
+                        <h3 class="text-xl font-bold uppercase tracking-tight">AI Line-Following Rover</h3>
+                    </div>
+                    <p class="text-gray-600 text-sm mb-4">Raspberry Pi 5와 ESP32를 결합하여 ROS 2 Jazzy 환경에서 정밀 제어를 구현했습니다.</p>
+                    <div class="flex flex-wrap gap-2 text-[10px] font-mono uppercase">
+                        <span class="bg-blue-100 text-blue-700 px-2 py-1 rounded">ROS 2 Jazzy</span>
+                        <span class="bg-slate-200 text-slate-700 px-2 py-1 rounded">PID Control</span>
+                    </div>
                 </div>
-                <div class="group p-6 bg-gray-50 rounded-2xl border border-transparent hover:border-blue-200 hover:bg-white hover:shadow-xl transition">
-                    <h3 class="font-bold text-lg mb-2 group-hover:text-blue-600">Solar Drone</h3>
-                    <p class="text-sm text-gray-500 mb-4 font-mono uppercase tracking-tighter">High-Pressure Cleaning</p>
-                    <p class="text-gray-600 text-sm leading-relaxed">고압 세척 시스템을 탑재한 태양광 패널 유지보수 특화 드론.</p>
-                </div>
-                <div class="group p-6 bg-gray-50 rounded-2xl border border-transparent hover:border-blue-200 hover:bg-white hover:shadow-xl transition">
-                    <h3 class="font-bold text-lg mb-2 group-hover:text-blue-600">Spatial Lens</h3>
-                    <p class="text-sm text-gray-500 mb-4 font-mono uppercase tracking-tighter">AI Vision App</p>
-                    <p class="text-gray-600 text-sm leading-relaxed">사물 인식 및 위치 추적 기능을 갖춘 스마트 비전 솔루션.</p>
-                </div>
-                <div class="group p-6 bg-gray-50 rounded-2xl border border-transparent hover:border-blue-200 hover:bg-white hover:shadow-xl transition">
-                    <h3 class="font-bold text-lg mb-2 group-hover:text-blue-600">STEM Kit</h3>
-                    <p class="text-sm text-gray-500 mb-4 font-mono uppercase tracking-tighter">Education Series</p>
-                    <p class="text-gray-600 text-sm leading-relaxed">중고등학생부터 전문가까지 아우르는 단계별 로봇 교육 키트.</p>
+                <div class="p-8 bg-slate-50 rounded-2xl border border-slate-100">
+                    <div class="flex items-center space-x-3 mb-4">
+                        <i class="fa-solid fa-droplet text-indigo-600"></i>
+                        <h3 class="text-xl font-bold uppercase tracking-tight">Solar Cleaning Drone</h3>
+                    </div>
+                    <p class="text-gray-600 text-sm mb-4">고압 세척 시스템을 탑재한 25kg급 유지보수용 드론 프로젝트입니다.</p>
+                    <div class="flex flex-wrap gap-2 text-[10px] font-mono uppercase">
+                        <span class="bg-indigo-100 text-indigo-700 px-2 py-1 rounded">High-Pressure Pump</span>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="edu" class="py-24 bg-slate-900 text-white">
-        <div class="max-w-4xl mx-auto px-6 text-center">
-            <h2 class="text-3xl font-bold mb-8 italic tracking-tighter uppercase font-mono">Knowledge Sharing</h2>
-            <div class="grid md:grid-cols-2 gap-8 text-left">
-                <div class="border-l-2 border-blue-500 pl-6">
-                    <h4 class="font-bold mb-2">Crazyflie F/W Guide</h4>
-                    <p class="text-sm text-gray-400">Windows/WSL 환경에서의 펌웨어 빌드 및 디버깅 가이드</p>
+    <section id="uav" class="py-24">
+        <div class="max-w-6xl mx-auto px-6">
+            <h2 class="text-3xl font-bold mb-12 italic tracking-tighter uppercase">UAV Systems Archive</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="group">
+                    <h4 class="text-xs font-bold text-blue-500 mb-1">2021 [cite: 18]</h4>
+                    <h3 class="text-xl font-bold mb-3 group-hover:text-blue-600">HYB3 Hybrid Multicopter</h3>
+                    <p class="text-sm text-slate-500 leading-relaxed mb-4">휘발유/전기 병렬 하이브리드 시스템. 5시간 이상 장기 체공 및 30kg 페이로드를 달성했습니다. [cite: 20, 21, 22]</p>
+                    <ul class="text-[11px] text-slate-400 font-mono">
+                        <li>MTOW: 70kg [cite: 16]</li>
+                        <li>Size: $1675\times1675\times655~mm$ [cite: 28]</li>
+                    </ul>
                 </div>
-                <div class="border-l-2 border-blue-500 pl-6">
-                    <h4 class="font-bold mb-2">Drone Delivery Proposal</h4>
-                    <p class="text-sm text-gray-400">근거리 배송을 위한 최적화된 드론 시스템 설계 제안</p>
+                <div class="group">
+                    <h4 class="text-xs font-bold text-blue-500 mb-1">2016-17 [cite: 46, 52]</h4>
+                    <h3 class="text-xl font-bold mb-3 group-hover:text-blue-600">Smart Spraying Systems</h3>
+                    <p class="text-sm text-slate-500 leading-relaxed mb-4">농업 방제용 KAD1200 모델은 10분에 약 3800평 살포가 가능한 고효율 시스템입니다. [cite: 53, 55]</p>
+                    <ul class="text-[11px] text-slate-400 font-mono">
+                        <li>D5-AG: 10L Capacity [cite: 45, 49]</li>
+                        <li>Radius: 6m Spray Range [cite: 45]</li>
+                    </ul>
+                </div>
+                <div class="group">
+                    <h4 class="text-xs font-bold text-blue-500 mb-1">2015 [cite: 66]</h4>
+                    <h3 class="text-xl font-bold mb-3 group-hover:text-blue-600">Variable Pitch Engine Drone</h3>
+                    <p class="text-sm text-slate-500 leading-relaxed mb-4">단일 엔진 구동으로 충전 시간의 제약을 없앴으며, 가변피치 제어로 오토로테이션이 가능합니다. [cite: 67, 68]</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer class="py-12 text-center text-gray-400 text-xs tracking-widest uppercase font-bold">
-        <p>&copy; 2026 SREDU & SOOROBOTICS | Jewon Lee</p>
+    <section id="mobility" class="py-24 bg-slate-900 text-white">
+        <div class="max-w-6xl mx-auto px-6">
+            <h2 class="text-3xl font-bold mb-16 italic text-center tracking-widest uppercase">Mobility & Sensors</h2>
+            <div class="grid md:grid-cols-2 gap-16">
+                <div class="border-l-2 border-blue-500 pl-8">
+                    <h3 class="text-2xl font-bold mb-4">Wheelchair Power Assist (2013) [cite: 87]</h3>
+                    <p class="text-slate-400 mb-6 leading-relaxed">기존 휠체어의 개조나 폴딩 기능 손상 없이 볼트-온 장착이 가능하며, 자동 수평 유지를 통해 추락을 방지합니다. [cite: 89, 90, 92]</p>
+                    <span class="text-blue-400 font-bold text-xs">특허 2건 등록 완료 [cite: 93]</span>
+                </div>
+                <div class="border-l-2 border-indigo-500 pl-8 text-slate-300">
+                    <h3 class="text-2xl font-bold mb-4 text-white">AHRS/INS Navigation (2007) [cite: 197]</h3>
+                    <p class="leading-relaxed">무인기 오토파일럿, 위성 안테나 추적 및 자세 제어의 핵심이 되는 고정밀 관성 항법 시스템입니다. [cite: 198, 201, 202]</p>
+                    <span class="text-indigo-400 font-bold text-xs">Technical Archive: AHRS FAPRIGENT [cite: 195]</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-12 text-center text-slate-400 text-[10px] uppercase tracking-[0.2em] font-bold">
+        <p>&copy; 2026 Jewon Lee | SOOROBOTICS | SREDU</p>
     </footer>
 
 </body>
