@@ -8,233 +8,62 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        html {
-            scroll-behavior: smooth;
+        body {
+            background-color: #ffffff;
         }
 
-        .text-shadow-sm {
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        .slogan-main {
+            font-size: clamp(2.5rem, 8vw, 5rem);
+            line-height: 1.1;
+            letter-spacing: -0.05em;
         }
     </style>
 </head>
 
-<body class="bg-slate-50 text-slate-900 font-sans leading-relaxed">
+<body class="text-slate-900 font-sans antialiased">
 
-    <nav class="fixed w-full bg-white/90 backdrop-blur-md border-b border-slate-100 z-50">
-        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-            <div class="flex items-center space-x-2">
-                <span class="text-2xl font-black text-blue-800 tracking-tighter uppercase">SooRobotics</span>
-            </div>
-            <div class="hidden md:flex space-x-8 text-sm font-bold text-slate-600">
-                <a href="#expertise" class="hover:text-blue-600 transition">Expertise</a>
-                <a href="#current" class="hover:text-blue-600 transition">Current Projects</a>
-                <a href="#uav" class="hover:text-blue-600 transition">UAV History</a>
-                <a href="#mobility" class="hover:text-blue-600 transition">Mobility</a>
-            </div>
+    <nav class="fixed w-full z-50 px-8 py-6 flex justify-between items-end">
+        <div class="text-2xl font-black text-blue-800 tracking-tighter uppercase">SooRobotics</div>
+        <div class="hidden md:flex space-x-10 text-[11px] font-bold text-slate-400 uppercase tracking-[0.2em]">
+            <a href="about.html" class="hover:text-blue-600 transition">About</a>
+            <a href="history.html" class="hover:text-blue-600 transition">History</a>
+            <a href="expertise.html" class="hover:text-blue-600 transition">Expertise</a>
+            <a href="projects.html" class="hover:text-blue-600 transition">Projects</a>
+            <a href="education.html" class="hover:text-blue-600 transition">Education</a>
         </div>
     </nav>
 
-    <header class="max-w-6xl mx-auto px-6 pt-40 pb-24 lg:pt-52 lg:pb-32">
-        <div class="max-w-4xl">
+    <main class="min-h-screen flex flex-col justify-center px-8 md:px-24">
+        <div class="max-w-5xl">
             <div
-                class="inline-block bg-blue-600 text-white px-4 py-1 rounded-sm text-[10px] font-bold mb-8 tracking-[0.2em] uppercase">
-                Aerospace Ph.D. | 30 Years Field Excellence
+                class="inline-block bg-blue-600 text-white px-3 py-1 rounded-sm text-[10px] font-bold mb-10 tracking-[0.2em] uppercase">
+                Aerospace Ph.D. | 30 Years Field Excellence [cite: 1, 2]
             </div>
 
-            <h1 class="text-5xl lg:text-7xl font-black text-slate-900 mb-6 leading-[1.1] tracking-tighter">
+            <h1 class="slogan-main font-black text-slate-900 mb-8">
                 “결과로 증명하는 <br>
-                <span class="text-blue-600 text-shadow-sm">자율시스템 엔지니어링.</span>”
+                <span class="text-blue-600">자율시스템 엔지니어링.</span>”
             </h1>
 
-            <p class="text-2xl lg:text-3xl font-bold text-slate-500 mb-10 tracking-tight">
+            <p class="text-xl md:text-3xl font-bold text-slate-400 mb-12 tracking-tight">
                 30년 UAV 현장이 완성한 Robotics 구현의 기준
             </p>
 
-            <p class="text-lg text-slate-600 mb-12 leading-relaxed max-w-2xl border-l-4 border-slate-200 pl-6">
-                미 육군 C4I 프로젝트부터 70kg급 하이브리드 UAV 양산까지.
-                단순한 이론을 넘어 현장에서 살아남는 <strong>성공 코드(Success Case)</strong>만을 엄선하여
-                지능형 로보틱스의 정석을 공유합니다.
-            </p>
-
-            <div class="flex flex-wrap gap-4">
-                <a href="#expertise"
-                    class="bg-blue-600 text-white px-10 py-4 rounded-full font-bold hover:bg-blue-700 transition shadow-xl shadow-blue-100 text-sm">
-                    핵심 기술 역량 탐색
-                </a>
-                <a href="#current"
-                    class="bg-white border border-slate-200 px-10 py-4 rounded-full font-bold hover:bg-slate-50 transition text-sm">
-                    실전 프로젝트 아카이브
-                </a>
-            </div>
-        </div>
-    </header>
-
-    <section class="bg-slate-900 text-white py-20">
-        <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-16">
-            <div>
-                <h2 class="text-blue-400 font-bold mb-6 tracking-widest uppercase text-sm">Academic Root</h2>
-                <ul class="space-y-6">
-                    <li>
-                        <div class="text-xs text-slate-400 mb-1">University of Kansas</div>
-                        <div class="font-bold">Aerospace Engineering (Ph.D.)</div>
-                    </li>
-                    <li>
-                        <div class="text-xs text-slate-400 mb-1">울산대학교 대학원</div>
-                        <div class="font-bold">항공우주공학과 (공학석사/학사)</div>
-                    </li>
-                </ul>
-            </div>
-            <div>
-                <h2 class="text-blue-400 font-bold mb-6 tracking-widest uppercase text-sm">Teaching Experience</h2>
-                <div class="grid grid-cols-2 gap-4 text-sm text-slate-300">
-                    <p>• 비행제어설계</p>
-                    <p>• 자동제어 / 비행역학</p>
-                    <p>• 마이크로 프로세서 입문</p>
-                    <p>• 라즈베리파이 응용</p>
-                    <p>• 헬리콥터 공학</p>
-                    <p>• 창의적 공학설계</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="expertise" class="py-24 bg-white">
-        <div class="max-w-6xl mx-auto px-6">
-            <div class="mb-16">
-                <h2 class="text-3xl font-bold italic tracking-tighter uppercase mb-4 text-slate-900">Core Expertise</h2>
-                <div class="h-1 w-20 bg-blue-600"></div>
-            </div>
-
-            <div class="grid md:grid-cols-3 gap-12">
-                <div>
-                    <h3 class="text-lg font-bold mb-6 flex items-center">
-                        <span
-                            class="w-8 h-8 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center mr-3 text-xs">01</span>
-                        Aerospace & UAV
-                    </h3>
-                    <ul class="space-y-4 text-gray-600 text-sm">
-                        <li class="flex justify-between border-b pb-2"><span>UAV Systems Design</span><span
-                                class="font-mono text-blue-600 font-bold">Expert</span></li>
-                        <li class="flex justify-between border-b pb-2"><span>Hybrid Propulsion</span><span
-                                class="font-mono text-blue-600 font-bold">30kg Payload</span></li>
-                        <li class="flex justify-between border-b pb-2"><span>Flight Dynamics</span><span
-                                class="font-mono text-blue-600 font-bold">Analysis</span></li>
-                    </ul>
-                </div>
-                <div>
-                    <h3 class="text-lg font-bold mb-6 flex items-center">
-                        <span
-                            class="w-8 h-8 bg-indigo-100 text-indigo-600 rounded-full flex items-center justify-center mr-3 text-xs">02</span>
-                        Navigation & Control
-                    </h3>
-                    <ul class="space-y-4 text-gray-600 text-sm">
-                        <li class="flex justify-between border-b pb-2"><span>AHRS/INS Algorithm</span><span
-                                class="font-mono text-indigo-600 font-bold">Core Tech</span></li>
-                        <li class="flex justify-between border-b pb-2"><span>Stewart Platform</span><span
-                                class="font-mono text-indigo-600 font-bold">Auto-Level</span></li>
-                        <li class="flex justify-between border-b pb-2"><span>ROS 2 & AI Vision</span><span
-                                class="font-mono text-indigo-600 font-bold">Jazzy</span></li>
-                    </ul>
-                </div>
-                <div>
-                    <h3 class="text-lg font-bold mb-6 flex items-center">
-                        <span
-                            class="w-8 h-8 bg-slate-100 text-slate-600 rounded-full flex items-center justify-center mr-3 text-xs">03</span>
-                        Hardware & Data
-                    </h3>
-                    <ul class="space-y-4 text-gray-600 text-sm">
-                        <li class="flex justify-between border-b pb-2"><span>Embedded Systems</span><span
-                                class="font-mono text-slate-600 font-bold">Master</span></li>
-                        <li class="flex justify-between border-b pb-2"><span>Real-time Logging</span><span
-                                class="font-mono text-slate-600 font-bold">LAPTOR R1</span></li>
-                        <li class="flex justify-between border-b pb-2"><span>PCB / Tooling Design</span><span
-                                class="font-mono text-slate-600 font-bold">Full-stack</span></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="current" class="py-24 bg-slate-50">
-        <div class="max-w-6xl mx-auto px-6">
-            <h2 class="text-3xl font-bold mb-12 italic tracking-tighter uppercase">Recent Success Case</h2>
-            <div class="grid md:grid-cols-2 gap-8">
-                <div class="bg-white p-8 rounded-2xl border border-slate-100 hover:shadow-xl transition">
-                    <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-lg flex items-center justify-center mb-6">
-                        <i class="fa-solid fa-microchip"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-4">AI Line-Following Rover</h3>
-                    <p class="text-slate-600 text-sm mb-6">Raspberry Pi 5와 ESP32를 결합하여 ROS 2 Jazzy 환경에서 정밀 제어를 구현한 성공
-                        사례입니다.</p>
-                    <div class="flex gap-2">
-                        <span class="text-[10px] bg-slate-100 px-2 py-1 rounded font-mono">ROS 2 JAZZY</span>
-                        <span class="text-[10px] bg-slate-100 px-2 py-1 rounded font-mono">PID CONTROL</span>
-                    </div>
-                </div>
-                <div class="bg-white p-8 rounded-2xl border border-slate-100 hover:shadow-xl transition">
+            <div class="flex items-center space-x-4 group">
+                <a href="mailto:benzydad@daum.net"
+                    class="flex items-center space-x-4 text-slate-900 hover:text-blue-600 transition">
                     <div
-                        class="w-12 h-12 bg-indigo-100 text-indigo-600 rounded-lg flex items-center justify-center mb-6">
-                        <i class="fa-solid fa-droplet"></i>
+                        class="w-12 h-12 rounded-full border border-slate-200 flex items-center justify-center group-hover:border-blue-600 transition">
+                        <i class="fa-regular fa-envelope text-xl"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-4">Solar Cleaning Drone</h3>
-                    <p class="text-slate-600 text-sm mb-6">고압 세척 시스템을 탑재한 25kg급 태양광 패널 유지보수용 드론 솔루션입니다.</p>
-                    <div class="flex gap-2">
-                        <span class="text-[10px] bg-slate-100 px-2 py-1 rounded font-mono">HIGH-PRESSURE PUMP</span>
-                    </div>
-                </div>
+                    <span class="text-lg font-bold tracking-tight">benzydad@daum.net</span>
+                </a>
             </div>
         </div>
-    </section>
+    </main>
 
-    <section id="uav" class="py-24 bg-white">
-        <div class="max-w-6xl mx-auto px-6">
-            <h2 class="text-3xl font-bold mb-12 italic tracking-tighter uppercase">UAV Systems Archive</h2>
-            <div class="grid md:grid-cols-3 gap-8 text-sm">
-                <div class="border-t pt-6">
-                    <div class="text-blue-600 font-bold mb-1">2021</div>
-                    <h4 class="font-bold mb-2 uppercase">HYB3 Hybrid Multicopter</h4>
-                    <p class="text-slate-500">70kg급 휘발유/전기 하이브리드 시스템. 30kg 페이로드 및 5시간 체공 실현.</p>
-                </div>
-                <div class="border-t pt-6">
-                    <div class="text-blue-600 font-bold mb-1">2016-17</div>
-                    <h4 class="font-bold mb-2 uppercase">Smart Spraying Systems</h4>
-                    <p class="text-slate-500">농업 방제용 KAD1200 모델 개발. 10분에 3800평 살포 효율 증명.</p>
-                </div>
-                <div class="border-t pt-6">
-                    <div class="text-blue-600 font-bold mb-1">2015</div>
-                    <h4 class="font-bold mb-2 uppercase">Variable Pitch Engine Drone</h4>
-                    <p class="text-slate-500">단일 엔진 구동 방식. 가변피치 제어를 통한 오토로테이션 기능 확보.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="mobility" class="py-24 bg-slate-50">
-        <div class="max-w-6xl mx-auto px-6">
-            <h2 class="text-3xl font-bold mb-12 italic tracking-tighter uppercase">Mobility & Navigation</h2>
-            <div class="grid md:grid-cols-2 gap-12">
-                <div class="bg-white p-8 rounded-2xl shadow-sm">
-                    <h4 class="text-xs font-bold text-slate-400 mb-2 uppercase tracking-widest">Innovation (2013-14)
-                    </h4>
-                    <h3 class="text-xl font-bold mb-4">Wheelchair Power Assist</h3>
-                    <p class="text-slate-600 text-sm mb-4">기존 휠체어의 폴딩 기능을 유지한 볼트-온 방식. 자동 수평 유지를 통한 낙상 방지 기술(특허 등록).</p>
-                </div>
-                <div class="bg-white p-8 rounded-2xl shadow-sm">
-                    <h4 class="text-xs font-bold text-slate-400 mb-2 uppercase tracking-widest">Electronics (2007-09)
-                    </h4>
-                    <h3 class="text-xl font-bold mb-4">AHRS/INS & Data Logger</h3>
-                    <p class="text-slate-600 text-sm mb-4">무인기용 고정밀 관성 항법 알고리즘 및 LAPTOR R1 경주차 데이터 로깅 시스템 구축 실적.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer class="py-16 text-center border-t border-slate-100">
-        <div class="max-w-6xl mx-auto px-6">
-            <p class="text-slate-400 text-[10px] uppercase tracking-[0.3em] font-bold">
-                &copy; 2026 SOOROBOTICS | Jewon Lee, Ph.D. | All Rights Reserved.
-            </p>
-        </div>
+    <footer class="fixed bottom-0 w-full px-8 py-8 text-[10px] text-slate-300 font-bold uppercase tracking-[0.3em]">
+        &copy; 2026 SOOROBOTICS | Jewon Lee, Ph.D.
     </footer>
 
 </body>
