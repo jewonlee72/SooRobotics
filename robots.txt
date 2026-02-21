@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://jewonlee72.github.io/SooRobotics/sitemap.xml
