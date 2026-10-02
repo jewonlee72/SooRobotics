@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://jewonlee72.github.io/SooRobotics/index.html</loc></url>
-  <url><loc>https://jewonlee72.github.io/SooRobotics/about.html</loc></url>
-  <url><loc>https://jewonlee72.github.io/SooRobotics/history.html</loc></url>
-  <url><loc>https://jewonlee72.github.io/SooRobotics/expertise.html</loc></url>
-  <url><loc>https://jewonlee72.github.io/SooRobotics/projects.html</loc></url>
-  <url><loc>https://jewonlee72.github.io/SooRobotics/education.html</loc></url>
-  
-  <url><loc>https://jewonlee72.github.io/SooRobotics/en/index.html</loc></url>
-  <url><loc>https://jewonlee72.github.io/SooRobotics/en/about.html</loc></url>
-  <url><loc>https://jewonlee72.github.io/SooRobotics/en/history.html</loc></url>
-  <url><loc>https://jewonlee72.github.io/SooRobotics/en/expertise.html</loc></url>
-  <url><loc>https://jewonlee72.github.io/SooRobotics/en/projects.html</loc></url>
+  <url><loc>https://soorobotics.org/</loc><lastmod>2026-10-02</lastmod></url>
+  <url><loc>https://soorobotics.org/about.html</loc><lastmod>2026-10-02</lastmod></url>
+  <url><loc>https://soorobotics.org/history.html</loc><lastmod>2026-10-02</lastmod></url>
+  <url><loc>https://soorobotics.org/expertise.html</loc><lastmod>2026-10-02</lastmod></url>
+  <url><loc>https://soorobotics.org/projects.html</loc><lastmod>2026-10-02</lastmod></url>
+  <url><loc>https://soorobotics.org/education.html</loc><lastmod>2026-10-02</lastmod></url>
+  <url><loc>https://soorobotics.org/en/</loc><lastmod>2026-10-02</lastmod></url>
+  <url><loc>https://soorobotics.org/en/about.html</loc><lastmod>2026-10-02</lastmod></url>
+  <url><loc>https://soorobotics.org/en/history.html</loc><lastmod>2026-10-02</lastmod></url>
+  <url><loc>https://soorobotics.org/en/expertise.html</loc><lastmod>2026-10-02</lastmod></url>
+  <url><loc>https://soorobotics.org/en/projects.html</loc><lastmod>2026-10-02</lastmod></url>
 </urlset>
