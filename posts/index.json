@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-13T14:13:39.121Z",
-  "count": 2,
+  "generatedAt": "2026-10-13T14:51:29.488Z",
+  "count": 3,
   "posts": [
     {
       "slug": "2026-10-13-hello",
@@ -12,6 +12,23 @@
         "announcement"
       ],
       "summary": "Ongoing development, field tests and travel updates from SooRobotics, posted here as they happen.",
+      "cover": "",
+      "draft": false
+    },
+    {
+      "slug": "2026-10-13-formation-flight-rl",
+      "file": "2026-10-13-formation-flight-rl.md",
+      "title": "5기 편대 자율비행 — 고전제어 골격 위에 올린 강화학습",
+      "date": "2026-10-13",
+      "lang": "ko",
+      "tags": [
+        "편대비행",
+        "강화학습",
+        "시뮬레이션",
+        "자율비행",
+        "무인기"
+      ],
+      "summary": "와류 상승류를 타려면 수십 센티미터 단위의 정밀도가 필요합니다. 고전제어 골격 위에 강화학습 잔차를 얹어 5기 편대의 이륙부터 착륙까지를 자율 수행했습니다.",
       "cover": "",
       "draft": false
     },
