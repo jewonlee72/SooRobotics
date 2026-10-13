@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>새 글 쓰기 | 수로보틱스(SooRobotics)</title>
+    <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/12.0.2/marked.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.1.6/purify.min.js"></script>
+    <style>
+        input, select, textarea { outline: none; }
+        input:focus, select:focus, textarea:focus { border-color: #2563eb; }
+    </style>
+</head>
+
+<body class="bg-white text-slate-900 font-sans antialiased">
+
+    <nav
+        class="fixed w-full z-50 px-8 py-6 flex justify-between items-end bg-white/80 backdrop-blur-md border-b border-slate-50">
+        <a href="index.html" class="text-2xl font-black text-blue-800 tracking-tighter uppercase">SooRobotics</a>
+        <div class="hidden md:flex items-center space-x-10 text-[11px] font-bold text-slate-400 uppercase tracking-[0.2em]">
+            <a href="blog.html" class="hover:text-blue-600 transition">Blog</a>
+            <a href="https://github.com/jewonlee72/SooRobotics/tree/main/posts" target="_blank" rel="noopener" class="hover:text-blue-600 transition">GitHub</a>
+        </div>
+    </nav>
+
+    <main class="pt-32 pb-24 px-6 md:px-24 max-w-5xl mx-auto">
+        <header class="mb-10">
+            <h1 class="text-3xl font-black tracking-tighter uppercase mb-3">새 글 쓰기</h1>
+            <p class="text-sm text-slate-500 leading-relaxed">
+                아래에 쓰고 <strong>GitHub에 올리기</strong>를 누르면 내용이 채워진 GitHub 새 파일 화면이 열립니다.
+                거기서 <strong>Commit changes</strong>만 누르면 1~2분 안에 홈페이지에 반영됩니다. (GitHub 로그인 필요)
+            </p>
+            <div class="h-1 w-20 bg-blue-600 mt-6"></div>
+        </header>
+
+        <div class="grid md:grid-cols-2 gap-10">
+            <form id="form" class="space-y-5" onsubmit="return false">
+                <div>
+                    <label class="block text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-2">제목 *</label>
+                    <input id="title" type="text" class="w-full border border-slate-200 rounded-sm px-4 py-3 text-lg font-bold" placeholder="예: 하노이 드론 전시회 참가">
+                </div>
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-2">날짜</label>
+                        <input id="date" type="date" class="w-full border border-slate-200 rounded-sm px-4 py-3 text-sm">
+                    </div>
+                    <div>
+                        <label class="block text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-2">언어</label>
+                        <select id="lang" class="w-full border border-slate-200 rounded-sm px-4 py-3 text-sm bg-white">
+                            <option value="ko">한국어</option>
+                            <option value="en">English</option>
+                        </select>
+                    </div>
+                </div>
+                <div>
+                    <label class="block text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-2">파일 이름 (영문, 자동 생성)</label>
+                    <input id="slug" type="text" class="w-full border border-slate-200 rounded-sm px-4 py-3 text-sm font-mono" placeholder="hanoi-drone-expo">
+                    <p class="text-[11px] text-slate-400 mt-1">저장 파일: <code id="filename" class="font-mono">posts/....md</code></p>
+                </div>
+                <div>
+                    <label class="block text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-2">태그 (쉼표로 구분)</label>
+                    <input id="tags" type="text" class="w-full border border-slate-200 rounded-sm px-4 py-3 text-sm" placeholder="베트남, 출장, 드론">
+                </div>
+                <div>
+                    <label class="block text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-2">한 줄 요약</label>
+                    <input id="summary" type="text" class="w-full border border-slate-200 rounded-sm px-4 py-3 text-sm" placeholder="목록에 표시될 요약 (비우면 본문 앞부분 사용)">
+                </div>
+                <div>
+                    <label class="block text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-2">대표 이미지 (선택)</label>
+                    <input id="cover" type="text" class="w-full border border-slate-200 rounded-sm px-4 py-3 text-sm font-mono" placeholder="images/2026-10-hanoi.jpg">
+                    <p class="text-[11px] text-slate-400 mt-1">
+                        이미지는 먼저 <a href="https://github.com/jewonlee72/SooRobotics/upload/main/posts/images" target="_blank" rel="noopener" class="text-blue-600 underline">posts/images 폴더에 업로드</a>한 뒤 파일명을 적습니다.
+                    </p>
+                </div>
+                <div>
+                    <label class="block text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-2">본문 (마크다운) *</label>
+                    <textarea id="body" rows="14" class="w-full border border-slate-200 rounded-sm px-4 py-3 text-sm leading-relaxed font-mono" placeholder="## 소제목&#10;&#10;본문...&#10;&#10;![사진 설명](images/파일명.jpg)"></textarea>
+                </div>
+
+                <div class="flex flex-wrap gap-3 pt-2">
+                    <button id="btn-github" type="button" class="bg-blue-600 text-white px-8 py-4 rounded-full font-bold hover:bg-blue-700 transition uppercase tracking-widest text-xs shadow-xl shadow-blue-100">
+                        <i class="fa-brands fa-github mr-2"></i>GitHub에 올리기
+                    </button>
+                    <button id="btn-copy" type="button" class="border border-slate-200 px-6 py-4 rounded-full font-bold hover:border-blue-600 transition uppercase tracking-widest text-xs">
+                        <i class="fa-regular fa-copy mr-2"></i>마크다운 복사
+                    </button>
+                    <button id="btn-clear" type="button" class="px-4 py-4 text-slate-400 hover:text-red-500 transition uppercase tracking-widest text-xs">초기화</button>
+                </div>
+                <p id="msg" class="text-xs text-slate-400 min-h-[1.25rem]"></p>
+            </form>
+
+            <section>
+                <div class="flex items-center justify-between mb-3">
+                    <span class="text-[10px] font-bold uppercase tracking-widest text-slate-400">미리보기</span>
+                    <button id="btn-raw" type="button" class="text-[10px] font-bold uppercase tracking-widest text-slate-400 hover:text-blue-600">원본 보기</button>
+                </div>
+                <div class="border border-slate-100 rounded-sm bg-slate-50 p-6 min-h-[20rem]">
+                    <div id="preview" class="prose prose-slate prose-sm max-w-none"></div>
+                    <pre id="raw" class="hidden text-[11px] font-mono whitespace-pre-wrap text-slate-600"></pre>
+                </div>
+                <div class="mt-8 text-xs text-slate-500 leading-relaxed space-y-2">
+                    <p class="font-bold text-slate-700">휴대폰에서 쓰기</p>
+                    <p>· 이 페이지는 휴대폰 브라우저에서도 그대로 동작합니다. 쓰는 중 내용은 이 기기에 자동 저장됩니다.</p>
+                    <p>· GitHub 앱이 편하면 <strong>posts</strong> 폴더에서 바로 .md 파일을 만들어도 됩니다. 형식은 <a href="https://github.com/jewonlee72/SooRobotics/blob/main/posts/_template.md" target="_blank" rel="noopener" class="text-blue-600 underline">_template.md</a>를 참고하세요.</p>
+                    <p>· 올라간 글을 고치려면 글 하단의 <strong>GitHub에서 편집</strong>을 누릅니다.</p>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <script>
+        (function () {
+            const REPO = 'jewonlee72/SooRobotics';
+            const $ = (id) => document.getElementById(id);
+            const fields = ['title', 'date', 'lang', 'slug', 'tags', 'summary', 'cover', 'body'];
+            const KEY = 'soorobotics.draft';
+            let slugTouched = false;
+
+            function today() {
+                const d = new Date();
+                return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+            }
+            function autoSlug(title) {
+                const s = (title || '').toLowerCase().normalize('NFKD').replace(/[^a-z0-9\s-]/g, '').trim().replace(/[\s-]+/g, '-').slice(0, 40);
+                if (s) return s;
+                const d = new Date();
+                return `post-${String(d.getHours()).padStart(2, '0')}${String(d.getMinutes()).padStart(2, '0')}`;
+            }
+            function filename() {
+                const slug = ($('slug').value.trim() || autoSlug($('title').value)).replace(/[^a-z0-9-]/gi, '-').toLowerCase();
+                return `${$('date').value || today()}-${slug}.md`;
+            }
+            function markdown() {
+                const lines = ['---'];
+                lines.push(`title: ${$('title').value.trim()}`);
+                lines.push(`date: ${$('date').value || today()}`);
+                lines.push(`lang: ${$('lang').value}`);
+                if ($('tags').value.trim()) lines.push(`tags: ${$('tags').value.trim()}`);
+                if ($('summary').value.trim()) lines.push(`summary: ${$('summary').value.trim()}`);
+                if ($('cover').value.trim()) lines.push(`cover: ${$('cover').value.trim()}`);
+                lines.push('---', '', $('body').value.replace(/\r\n/g, '\n').trim(), '');
+                return lines.join('\n');
+            }
+            function save() {
+                try {
+                    const data = {};
+                    fields.forEach((f) => { data[f] = $(f).value; });
+                    localStorage.setItem(KEY, JSON.stringify(data));
+                } catch (e) { /* storage unavailable */ }
+            }
+            function load() {
+                try {
+                    const data = JSON.parse(localStorage.getItem(KEY) || 'null');
+                    if (data) fields.forEach((f) => { if (data[f] != null) $(f).value = data[f]; });
+                    if (data && data.slug) slugTouched = true;
+                } catch (e) { /* ignore */ }
+            }
+            function update() {
+                if (!slugTouched) $('slug').value = autoSlug($('title').value);
+                $('filename').textContent = `posts/${filename()}`;
+                const md = markdown();
+                $('raw').textContent = md;
+                const body = $('body').value.trim();
+                $('preview').innerHTML = body
+                    ? DOMPurify.sanitize(marked.parse(body))
+                    : '<p class="text-slate-400">본문을 입력하면 여기에 미리보기가 표시됩니다.</p>';
+                $('preview').querySelectorAll('img').forEach((img) => {
+                    const src = img.getAttribute('src') || '';
+                    if (!/^(https?:|data:|\/)/i.test(src)) img.setAttribute('src', 'posts/' + src.replace(/^posts\//, ''));
+                });
+                save();
+            }
+            function validate() {
+                if (!$('title').value.trim()) { $('msg').textContent = '제목을 입력하세요.'; $('title').focus(); return false; }
+                if (!$('body').value.trim()) { $('msg').textContent = '본문을 입력하세요.'; $('body').focus(); return false; }
+                return true;
+            }
+
+            marked.setOptions({ gfm: true, breaks: true });
+            $('date').value = today();
+            load();
+            fields.forEach((f) => $(f).addEventListener('input', update));
+            $('slug').addEventListener('input', () => { slugTouched = !!$('slug').value.trim(); });
+            update();
+
+            $('btn-github').addEventListener('click', () => {
+                if (!validate()) return;
+                const md = markdown();
+                const url = `https://github.com/${REPO}/new/main/posts?filename=${encodeURIComponent(filename())}&value=${encodeURIComponent(md)}`;
+                if (url.length > 7000) {
+                    // Very long posts can exceed URL limits: copy instead and open an empty editor.
+                    navigator.clipboard && navigator.clipboard.writeText(md);
+                    $('msg').textContent = '글이 길어 내용을 클립보드에 복사했습니다. 열리는 GitHub 화면에 붙여넣고 파일명을 ' + filename() + ' 으로 저장하세요.';
+                    window.open(`https://github.com/${REPO}/new/main/posts?filename=${encodeURIComponent(filename())}`, '_blank', 'noopener');
+                    return;
+                }
+                $('msg').textContent = 'GitHub 화면에서 "Commit changes"를 누르면 게시됩니다.';
+                window.open(url, '_blank', 'noopener');
+            });
+            $('btn-copy').addEventListener('click', async () => {
+                if (!validate()) return;
+                try { await navigator.clipboard.writeText(markdown()); $('msg').textContent = '마크다운을 복사했습니다.'; }
+                catch (e) { $('raw').classList.remove('hidden'); $('preview').classList.add('hidden'); $('msg').textContent = '복사가 지원되지 않아 원본을 표시했습니다. 직접 선택해서 복사하세요.'; }
+            });
+            $('btn-clear').addEventListener('click', () => {
+                if (!confirm('작성 중인 내용을 모두 지울까요?')) return;
+                fields.forEach((f) => { $(f).value = ''; });
+                $('date').value = today(); $('lang').value = 'ko'; slugTouched = false;
+                try { localStorage.removeItem(KEY); } catch (e) { /* ignore */ }
+                update(); $('msg').textContent = '';
+            });
+            $('btn-raw').addEventListener('click', () => {
+                const showRaw = $('raw').classList.contains('hidden');
+                $('raw').classList.toggle('hidden', !showRaw);
+                $('preview').classList.toggle('hidden', showRaw);
+                $('btn-raw').textContent = showRaw ? '미리보기' : '원본 보기';
+            });
+        })();
+    </script>
+    <script src="assets/nav.js"></script>
+</body>
+
+</html>

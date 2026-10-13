@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="수로보틱스(SooRobotics) 소식 – 진행 중인 개발, 현장 테스트, 출장 소식을 전합니다.">
+    <title>Blog | 수로보틱스(SooRobotics)</title>
+    <link rel="canonical" href="https://soorobotics.org/blog.html">
+    <link rel="alternate" hreflang="ko" href="https://soorobotics.org/blog.html">
+    <link rel="alternate" hreflang="en" href="https://soorobotics.org/en/blog.html">
+    <link rel="alternate" hreflang="x-default" href="https://soorobotics.org/blog.html">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .post-card:hover { transform: translateY(-5px); transition: all 0.3s ease; }
+        .line-clamp-3 { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+        .chip.active { background: #2563eb; color: #fff; border-color: #2563eb; }
+    </style>
+</head>
+
+<body class="bg-white text-slate-900 font-sans antialiased">
+
+    <nav
+        class="fixed w-full z-50 px-8 py-6 flex justify-between items-end bg-white/80 backdrop-blur-md border-b border-slate-50">
+        <a href="index.html" class="text-2xl font-black text-blue-800 tracking-tighter uppercase">SooRobotics</a>
+        <div class="hidden md:flex items-center space-x-10 text-[11px] font-bold text-slate-400 uppercase tracking-[0.2em]">
+            <a href="about.html" class="hover:text-blue-600 transition">About</a>
+            <a href="history.html" class="hover:text-blue-600 transition">History</a>
+            <a href="expertise.html" class="hover:text-blue-600 transition">Expertise</a>
+            <a href="projects.html" class="hover:text-blue-600 transition">Projects</a>
+            <a href="education.html" class="hover:text-blue-600 transition">Education</a>
+            <a href="blog.html" class="text-blue-600">Blog</a>
+            <div class="flex items-center space-x-2 border-l border-slate-200 pl-6 ml-4">
+                <span class="text-blue-600">KR</span>
+                <span class="text-slate-200">|</span>
+                <a href="en/blog.html" class="hover:text-blue-600 transition">EN</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="pt-40 pb-24 px-8 md:px-24 max-w-7xl mx-auto">
+        <header class="mb-16">
+            <h1 class="text-4xl font-black tracking-tighter uppercase mb-4">Blog &amp; Updates</h1>
+            <p class="text-slate-500 font-medium">지금 진행 중인 개발, 현장 테스트, 출장 소식을 바로 전합니다.</p>
+            <div class="h-1 w-20 bg-blue-600 mt-6"></div>
+        </header>
+
+        <div class="flex flex-wrap items-center justify-between gap-4 mb-10">
+            <div id="filters" class="flex flex-wrap gap-2 text-[10px] font-bold uppercase tracking-widest">
+                <button data-lang="all" class="chip active border border-slate-200 px-4 py-2 rounded-full hover:border-blue-600 transition">전체</button>
+                <button data-lang="ko" class="chip border border-slate-200 px-4 py-2 rounded-full hover:border-blue-600 transition">한국어</button>
+                <button data-lang="en" class="chip border border-slate-200 px-4 py-2 rounded-full hover:border-blue-600 transition">English</button>
+            </div>
+            <a href="write.html" class="text-[10px] font-bold uppercase tracking-widest text-slate-400 hover:text-blue-600 transition">
+                <i class="fa-solid fa-pen mr-1"></i> 새 글 쓰기
+            </a>
+        </div>
+
+        <div id="status" class="text-sm text-slate-400 py-16 text-center">불러오는 중...</div>
+        <div id="posts" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+    </main>
+
+    <footer
+        class="px-8 py-12 text-[10px] text-slate-300 font-bold uppercase tracking-[0.3em] text-center border-t border-slate-50">
+        <span class="block normal-case tracking-normal mb-1">직업정보제공사업 신고번호 : J1700020260006 (대전지방고용노동청)</span>
+        &copy; 2026 수로보틱스 SOOROBOTICS | Jewon Lee, Ph.D.
+    </footer>
+
+    <script src="assets/blog.js"></script>
+    <script>
+        (async function () {
+            const ROOT = '';          // this page sits at the site root
+            const UI_LANG = 'ko';     // date format / labels
+            const DEFAULT_FILTER = 'all';
+            const $status = document.getElementById('status');
+            const $posts = document.getElementById('posts');
+            const $filters = document.getElementById('filters');
+            let all = [];
+            let filter = DEFAULT_FILTER;
+
+            function render() {
+                const list = all.filter((p) => filter === 'all' || p.lang === filter);
+                $posts.innerHTML = list.map((p) => SooBlog.renderCard(p, ROOT, UI_LANG)).join('');
+                $status.textContent = list.length ? '' : (UI_LANG === 'en' ? 'No posts yet.' : '아직 올라온 글이 없습니다.');
+                $status.style.display = list.length ? 'none' : '';
+            }
+
+            $filters.addEventListener('click', (e) => {
+                const btn = e.target.closest('button[data-lang]');
+                if (!btn) return;
+                filter = btn.dataset.lang;
+                $filters.querySelectorAll('.chip').forEach((c) => c.classList.toggle('active', c === btn));
+                render();
+            });
+
+            try {
+                all = await SooBlog.loadIndex(ROOT);
+                render();
+            } catch (err) {
+                console.error(err);
+                $status.textContent = UI_LANG === 'en' ? 'Could not load posts.' : '글 목록을 불러오지 못했습니다.';
+            }
+        })();
+    </script>
+    <script src="assets/nav.js"></script>
+</body>
+
+</html>

@@ -73,12 +73,13 @@
     <nav
         class="fixed w-full z-50 px-8 py-6 flex justify-between items-end bg-white/80 backdrop-blur-md border-b border-slate-50">
         <a href="index.html" class="text-2xl font-black text-blue-800 tracking-tighter uppercase">SooRobotics</a>
-        <div class="flex items-center space-x-10 text-[11px] font-bold text-slate-400 uppercase tracking-[0.2em]">
+        <div class="hidden md:flex items-center space-x-10 text-[11px] font-bold text-slate-400 uppercase tracking-[0.2em]">
             <a href="about.html" class="hover:text-blue-600 transition">About</a>
             <a href="history.html" class="hover:text-blue-600 transition">History</a>
             <a href="expertise.html" class="hover:text-blue-600 transition">Expertise</a>
             <a href="projects.html" class="hover:text-blue-600 transition">Projects</a>
             <a href="education.html" class="hover:text-blue-600 transition">Education</a>
+            <a href="blog.html" class="hover:text-blue-600 transition">Blog</a>
             <div class="flex items-center space-x-2 border-l border-slate-200 pl-6 ml-4">
                 <span class="text-blue-600">KR</span>
                 <span class="text-slate-200">|</span>
@@ -112,6 +113,12 @@
                     <span class="text-lg font-bold tracking-tight">benzydad@daum.net</span>
                 </a>
             </div>
+
+            <a id="latest-post" href="blog.html" class="hidden mt-12 group/latest items-center space-x-3 text-sm font-bold text-slate-400 hover:text-blue-600 transition">
+                <span class="text-[10px] tracking-[0.2em] uppercase text-blue-600">Latest</span>
+                <span id="latest-post-title" class="tracking-tight"></span>
+                <i class="fa-solid fa-arrow-right text-xs"></i>
+            </a>
         </div>
     </main>
 
@@ -120,6 +127,21 @@
         &copy; 2026 수로보틱스 SOOROBOTICS | Jewon Lee, Ph.D.
     </footer>
 
+
+    <script src="assets/blog.js"></script>
+    <script>
+        // Show the newest blog post as a one-line teaser (only if there is one).
+        SooBlog.loadIndex('').then((posts) => {
+            const p = posts[0];
+            if (!p) return;
+            const a = document.getElementById('latest-post');
+            document.getElementById('latest-post-title').textContent = p.title;
+            a.href = SooBlog.postUrl(p, '');
+            a.classList.remove('hidden');
+            a.classList.add('flex');
+        }).catch(() => {});
+    </script>
+    <script src="assets/nav.js"></script>
 </body>
 
 </html>
