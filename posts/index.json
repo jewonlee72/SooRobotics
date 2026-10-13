@@ -1,7 +1,24 @@
 {
-  "generatedAt": "2026-10-13T15:10:15.942Z",
-  "count": 5,
+  "generatedAt": "2026-10-13T15:18:20.149Z",
+  "count": 6,
   "posts": [
+    {
+      "slug": "2026-10-13-orda-counseling-robot-en",
+      "file": "2026-10-13-orda-counseling-robot-en.md",
+      "title": "The Robot Speaks First — Building ORDA, a Job-Counseling Robot",
+      "date": "2026-10-13",
+      "lang": "en",
+      "tags": [
+        "ORDA",
+        "robot",
+        "AI",
+        "on-device",
+        "job counseling"
+      ],
+      "summary": "For a job seeker hesitating at the counter of an employment center, the hardest part is the first word. ORDA says it for them. It listens and talks, looks up live job postings on the spot, and responds with facial expressions and head gestures. Here is the build, from parts to a finished robot, plus an unedited conversation test.",
+      "cover": "images/orda-cover.jpg",
+      "draft": false
+    },
     {
       "slug": "2026-10-13-orda-counseling-robot",
       "file": "2026-10-13-orda-counseling-robot.md",
