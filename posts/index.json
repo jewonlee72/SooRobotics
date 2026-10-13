@@ -1,7 +1,25 @@
 {
-  "generatedAt": "2026-10-13T15:18:34.822Z",
-  "count": 6,
+  "generatedAt": "2026-10-13T15:53:42.120Z",
+  "count": 7,
   "posts": [
+    {
+      "slug": "2026-10-14-robocar2-ros2-1472",
+      "file": "2026-10-14-robocar2-ros2-1472.md",
+      "title": "로보카2와 『ROS2 로봇제작 1472』 — 교재로 배우고, 직접 만든 로봇으로 증명합니다",
+      "date": "2026-10-14",
+      "lang": "ko",
+      "tags": [
+        "로보카2",
+        "RoboCar2",
+        "ROS2",
+        "로봇교육",
+        "로봇제작1472",
+        "ESP32"
+      ],
+      "summary": "수로보틱스의 교육용 자율주행 로봇 로보카2와, 이를 바탕으로 쓴 교재 『ROS2 로봇제작 1472(일사천리)』를 소개합니다. 교육과정에서 학생들이 직접 수행한 프로젝트 영상도 함께 공개합니다.",
+      "cover": "images/robocar2-student-poster.jpg",
+      "draft": false
+    },
     {
       "slug": "2026-10-13-orda-counseling-robot-en",
       "file": "2026-10-13-orda-counseling-robot-en.md",
