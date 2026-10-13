@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-13T15:08:57.628Z",
-  "count": 4,
+  "generatedAt": "2026-10-13T15:10:15.942Z",
+  "count": 5,
   "posts": [
     {
       "slug": "2026-10-13-orda-counseling-robot",
@@ -29,6 +29,23 @@
         "announcement"
       ],
       "summary": "Ongoing development, field tests and travel updates from SooRobotics, posted here as they happen.",
+      "cover": "",
+      "draft": false
+    },
+    {
+      "slug": "2026-10-13-formation-flight-rl-en",
+      "file": "2026-10-13-formation-flight-rl-en.md",
+      "title": "Five-Aircraft Formation Flight — Reinforcement Learning on a Classical Control Backbone",
+      "date": "2026-10-13",
+      "lang": "en",
+      "tags": [
+        "formation flight",
+        "reinforcement learning",
+        "simulation",
+        "autonomous flight",
+        "UAV"
+      ],
+      "summary": "Riding a wingtip vortex updraft demands decimetre-level precision. We put a bounded reinforcement-learning residual on top of a classical control backbone and flew a five-aircraft formation from takeoff to landing autonomously.",
       "cover": "",
       "draft": false
     },
