@@ -1,7 +1,24 @@
 {
-  "generatedAt": "2026-10-13T15:02:31.494Z",
-  "count": 3,
+  "generatedAt": "2026-10-13T15:08:37.125Z",
+  "count": 4,
   "posts": [
+    {
+      "slug": "2026-10-13-orda-counseling-robot",
+      "file": "2026-10-13-orda-counseling-robot.md",
+      "title": "로봇이 먼저 말을 겁니다 — 채용상담 로봇 '오르다(ORDA)' 개발기",
+      "date": "2026-10-13",
+      "lang": "ko",
+      "tags": [
+        "ORDA",
+        "로봇",
+        "AI",
+        "온디바이스",
+        "채용상담"
+      ],
+      "summary": "고용지원 창구 앞에서 망설이는 첫 걸음을 로봇이 대신 건넵니다. 음성으로 대화하고, 실시간 채용공고를 찾아 읽어 주고, 표정과 고갯짓으로 반응하는 상담 로봇 오르다. 부품 준비부터 완성까지의 제작 과정과 실제 대화 테스트 영상을 공개합니다.",
+      "cover": "images/orda-cover.jpg",
+      "draft": false
+    },
     {
       "slug": "2026-10-13-hello",
       "file": "2026-10-13-hello.md",
