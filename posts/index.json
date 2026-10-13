@@ -1,7 +1,24 @@
 {
-  "generatedAt": "2026-10-13T15:54:28.589Z",
-  "count": 7,
+  "generatedAt": "2026-10-13T15:58:35.970Z",
+  "count": 8,
   "posts": [
+    {
+      "slug": "2026-10-14-robocar2-ros2-1472-en",
+      "file": "2026-10-14-robocar2-ros2-1472-en.md",
+      "title": "RoboCar2 and \"ROS2 Robot Building 1472\" — Learn from the Book, Prove It with a Robot You Built",
+      "date": "2026-10-14",
+      "lang": "en",
+      "tags": [
+        "RoboCar2",
+        "ROS2",
+        "robotics education",
+        "ESP32",
+        "micro-ROS"
+      ],
+      "summary": "Meet RoboCar2, SooRobotics' educational autonomous robot, and the textbook written around it, \"ROS2 Robot Building 1472\". Includes a video of a project students built in class, with a drone riding on the car.",
+      "cover": "images/robocar2-student-poster.jpg",
+      "draft": false
+    },
     {
       "slug": "2026-10-14-robocar2-ros2-1472",
       "file": "2026-10-14-robocar2-ros2-1472.md",
