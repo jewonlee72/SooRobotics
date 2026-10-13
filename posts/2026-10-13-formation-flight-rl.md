@@ -18,7 +18,7 @@ summary: 와류 상승류를 타려면 수십 센티미터 단위의 정밀도�
 ## 영상 1 — 전체 임무
 
 <video controls playsinline preload="metadata" style="width:100%;max-width:960px;border-radius:8px"
-       src="images/formation-5ship-full-mission.mp4"></video>
+       src="/posts/images/formation-5ship-full-mission.mp4"></video>
 
 *이륙 → 천이 → 대열 형성 → 8자 기동 → 선두 교대 → 복귀 → 착륙.
 5기가 사람의 개입 없이 전 과정을 수행합니다.*
@@ -106,7 +106,7 @@ V 대열의 두 팔은 **공선(collinear)** 입니다. 같은 속도로 동시�
 ## 영상 2 — 선두 교대
 
 <video controls playsinline preload="metadata" style="width:100%;max-width:960px;border-radius:8px"
-       src="images/formation-5ship-lead-rotation.mp4"></video>
+       src="/posts/images/formation-5ship-lead-rotation.mp4"></video>
 
 *직선 순항 중 선두 교대를 10회 반복합니다. 5기 전원이 돌아가며 선두를 맡으며,
 선두기가 외곽으로 빠져 후방에 합류하는 동안 나머지는 자기 열에서 한 칸씩 전진합니다.*
@@ -150,8 +150,3 @@ V 대열의 두 팔은 **공선(collinear)** 입니다. 같은 속도로 동시�
 - 물리 기반 와류 중첩 모델에 의한 편대 슬롯 최적화
 - 강화학습: PPO, 수만 개 환경 동시 시뮬레이션
 - 6자유도 검증: NVIDIA Isaac Sim
-
----
-
-*본 연구는 과학기술정보통신부·정보통신산업진흥원 「고성능 컴퓨팅 지원사업」의
-지원을 받아 수행되었습니다.*
