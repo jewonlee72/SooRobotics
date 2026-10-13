@@ -1,0 +1,32 @@
+{
+  "generatedAt": "2026-10-13T14:03:10.433Z",
+  "count": 2,
+  "posts": [
+    {
+      "slug": "2026-10-13-hello",
+      "file": "2026-10-13-hello.md",
+      "title": "SooRobotics News is now live",
+      "date": "2026-10-13",
+      "lang": "en",
+      "tags": [
+        "announcement"
+      ],
+      "summary": "Ongoing development, field tests and travel updates from SooRobotics, posted here as they happen.",
+      "cover": "",
+      "draft": false
+    },
+    {
+      "slug": "2026-10-13-blog-open",
+      "file": "2026-10-13-blog-open.md",
+      "title": "소식 페이지를 열었습니다",
+      "date": "2026-10-13",
+      "lang": "ko",
+      "tags": [
+        "공지"
+      ],
+      "summary": "수로보틱스가 진행 중인 개발, 현장 테스트, 출장 소식을 이 페이지에서 바로 전합니다.",
+      "cover": "",
+      "draft": false
+    }
+  ]
+}

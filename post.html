@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="수로보틱스(SooRobotics) 소식">
+    <meta name="robots" content="index, follow">
+    <title>Blog | 수로보틱스(SooRobotics)</title>
+    <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/12.0.2/marked.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.1.6/purify.min.js"></script>
+    <style>
+        .prose img { border-radius: 2px; }
+        .prose h2 { letter-spacing: -0.02em; }
+        .prose a { color: #2563eb; }
+    </style>
+</head>
+
+<body class="bg-white text-slate-900 font-sans antialiased">
+
+    <nav
+        class="fixed w-full z-50 px-8 py-6 flex justify-between items-end bg-white/80 backdrop-blur-md border-b border-slate-50">
+        <a id="nav-home" href="index.html" class="text-2xl font-black text-blue-800 tracking-tighter uppercase">SooRobotics</a>
+        <div id="nav-links" class="hidden md:flex items-center space-x-10 text-[11px] font-bold text-slate-400 uppercase tracking-[0.2em]">
+            <a data-page="about.html" href="about.html" class="hover:text-blue-600 transition">About</a>
+            <a data-page="history.html" href="history.html" class="hover:text-blue-600 transition">History</a>
+            <a data-page="expertise.html" href="expertise.html" class="hover:text-blue-600 transition">Expertise</a>
+            <a data-page="projects.html" href="projects.html" class="hover:text-blue-600 transition">Projects</a>
+            <a href="education.html" class="hover:text-blue-600 transition">Education</a>
+            <a data-page="blog.html" href="blog.html" class="text-blue-600">Blog</a>
+            <div class="flex items-center space-x-2 border-l border-slate-200 pl-6 ml-4">
+                <a id="nav-kr" href="blog.html" class="text-blue-600">KR</a>
+                <span class="text-slate-200">|</span>
+                <a id="nav-en" href="en/blog.html" class="hover:text-blue-600 transition">EN</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="pt-40 pb-24 px-8 md:px-24 max-w-3xl mx-auto">
+        <a id="back" href="blog.html" class="inline-block text-[10px] font-bold uppercase tracking-widest text-slate-400 hover:text-blue-600 transition mb-10">
+            <i class="fa-solid fa-arrow-left mr-2"></i><span id="back-label">목록으로</span>
+        </a>
+
+        <div id="status" class="text-sm text-slate-400 py-16 text-center">불러오는 중...</div>
+
+        <article id="article" class="hidden">
+            <header class="mb-12">
+                <div class="text-[10px] font-bold text-blue-600 tracking-widest uppercase mb-4">
+                    <span id="date"></span>
+                </div>
+                <h1 id="title" class="text-3xl md:text-5xl font-black tracking-tighter leading-tight mb-6"></h1>
+                <p id="summary" class="text-lg text-slate-500 leading-relaxed"></p>
+                <div id="tags" class="mt-6 flex flex-wrap gap-x-3 gap-y-1"></div>
+                <div class="h-1 w-20 bg-blue-600 mt-8"></div>
+            </header>
+            <img id="cover" class="hidden w-full rounded-sm mb-12" alt="">
+            <div id="content" class="prose prose-slate max-w-none prose-headings:font-black prose-headings:tracking-tight prose-img:w-full"></div>
+
+            <footer class="mt-20 pt-8 border-t border-slate-100 flex flex-wrap items-center justify-between gap-4 text-[10px] font-bold uppercase tracking-widest text-slate-400">
+                <a href="mailto:benzydad@daum.net" class="hover:text-blue-600 transition">
+                    <i class="fa-regular fa-envelope mr-2"></i>benzydad@daum.net
+                </a>
+                <a id="edit" href="#" target="_blank" rel="noopener" class="hover:text-blue-600 transition">
+                    <i class="fa-solid fa-pen mr-2"></i><span id="edit-label">GitHub에서 편집</span>
+                </a>
+            </footer>
+        </article>
+    </main>
+
+    <footer
+        class="px-8 py-12 text-[10px] text-slate-300 font-bold uppercase tracking-[0.3em] text-center border-t border-slate-50">
+        <span id="foot-reg" class="block normal-case tracking-normal mb-1">직업정보제공사업 신고번호 : J1700020260006 (대전지방고용노동청)</span>
+        <span id="foot-copy">&copy; 2026 수로보틱스 SOOROBOTICS | Jewon Lee, Ph.D.</span>
+    </footer>
+
+    <script src="assets/blog.js"></script>
+    <script>
+        (async function () {
+            const ROOT = '';
+            const params = new URLSearchParams(location.search);
+            const slug = (params.get('p') || '').replace(/[^\w\-가-힣]/g, '');
+            const $ = (id) => document.getElementById(id);
+
+            function applyLang(lang) {
+                if (lang !== 'en') return;
+                document.documentElement.lang = 'en';
+                $('nav-home').href = 'en/index.html';
+                document.querySelectorAll('#nav-links a[data-page]').forEach((a) => { a.href = 'en/' + a.dataset.page; });
+                $('nav-kr').className = 'hover:text-blue-600 transition';
+                $('nav-en').className = 'text-blue-600';
+                $('back').href = 'en/blog.html';
+                $('back-label').textContent = 'Back to list';
+                $('edit-label').textContent = 'Edit on GitHub';
+                $('foot-reg').textContent = 'Job Information Provision Business Reg. No. : J1700020260006 (Daejeon Regional Employment & Labor Office)';
+                $('foot-copy').innerHTML = '&copy; 2026 SOOROBOTICS | Jewon Lee, Ph.D.';
+            }
+
+            if (!slug) {
+                $('status').textContent = '글을 찾을 수 없습니다.';
+                return;
+            }
+
+            try {
+                const post = await SooBlog.loadPost(slug, ROOT);
+                applyLang(post.lang);
+
+                document.title = `${post.title} | ${post.lang === 'en' ? 'SooRobotics' : '수로보틱스(SooRobotics)'}`;
+                const desc = document.querySelector('meta[name="description"]');
+                if (desc) desc.content = post.summary || post.title;
+                const og = (p, c) => { const m = document.createElement('meta'); m.setAttribute('property', p); m.content = c; document.head.appendChild(m); };
+                og('og:title', post.title);
+                og('og:description', post.summary || '');
+                og('og:type', 'article');
+                og('og:url', location.href);
+                if (post.cover) og('og:image', new URL(SooBlog.assetUrl(post.cover, ROOT), location.href).href);
+
+                $('date').textContent = SooBlog.formatDate(post.date, post.lang);
+                $('title').textContent = post.title;
+                $('summary').textContent = post.summary || '';
+                $('summary').style.display = post.summary ? '' : 'none';
+                $('tags').innerHTML = post.tags.map((t) => `<span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">#${SooBlog.esc(t)}</span>`).join('');
+                if (post.cover) { $('cover').src = SooBlog.assetUrl(post.cover, ROOT); $('cover').classList.remove('hidden'); }
+
+                marked.setOptions({ gfm: true, breaks: true });
+                const html = DOMPurify.sanitize(marked.parse(post.body), { ADD_TAGS: ['iframe'], ADD_ATTR: ['allow', 'allowfullscreen', 'frameborder', 'target'] });
+                $('content').innerHTML = html;
+                // Resolve image/link paths written relative to /posts/
+                $('content').querySelectorAll('img').forEach((img) => {
+                    img.setAttribute('src', SooBlog.assetUrl(img.getAttribute('src'), ROOT));
+                    img.loading = 'lazy';
+                });
+                $('content').querySelectorAll('a[href]').forEach((a) => {
+                    const h = a.getAttribute('href');
+                    if (/^(https?:)?\/\//i.test(h)) { a.target = '_blank'; a.rel = 'noopener'; }
+                });
+
+                $('edit').href = `https://github.com/${SooBlog.REPO}/edit/${SooBlog.BRANCH}/posts/${post.file}`;
+                $('status').style.display = 'none';
+                $('article').classList.remove('hidden');
+            } catch (err) {
+                console.error(err);
+                $('status').textContent = '글을 불러오지 못했습니다. (' + slug + ')';
+            }
+        })();
+    </script>
+    <script src="assets/nav.js"></script>
+</body>
+
+</html>
